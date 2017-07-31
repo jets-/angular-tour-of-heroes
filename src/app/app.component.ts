@@ -80,8 +80,13 @@ export class AppComponent implements OnInit {
     this.getHeroes();
   }
 
+
   getHeroes(): void {
-  this.heroes = this.heroService.getHeroes();
+    // function set(heroes) {
+    //   this.heroes=heroes;
+    // }
+    // this.heroService.getHeroes().then(set);
+    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
   }
 
   onSelect(hero: Hero): void {
